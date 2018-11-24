@@ -1,12 +1,12 @@
 %define		plugin	fugitive
 Summary:	Vim plugin: A Git wrapper so awesome, it should be illegal
 Name:		vim-plugin-%{plugin}
-Version:	2.4
+Version:	2.5
 Release:	1
 License:	Vim
 Group:		Applications/Editors/Vim
 Source0:	https://github.com/tpope/vim-fugitive/archive/v%{version}.tar.gz
-# Source0-md5:	f2cbd927bc09764407b9ec3344af1dc1
+# Source0-md5:	c08ebeea230d82a65400163c52b5e94f
 URL:		http://majutsushi.github.com/fugitive/
 Requires:	vim-rt >= 4:7.4.0
 BuildArch:	noarch
