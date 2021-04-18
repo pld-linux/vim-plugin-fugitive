@@ -1,13 +1,14 @@
 %define		plugin	fugitive
 Summary:	Vim plugin: A Git wrapper so awesome, it should be illegal
 Name:		vim-plugin-%{plugin}
-Version:	3.2
+Version:	3.3
 Release:	1
 License:	Vim
 Group:		Applications/Editors/Vim
 Source0:	https://github.com/tpope/vim-fugitive/archive/v%{version}.tar.gz
-# Source0-md5:	b6225f13233f3ee83ae758729ef105fb
+# Source0-md5:	3b370f7e99adf35efffa0fef1ae04fb8
 URL:		http://majutsushi.github.com/fugitive/
+Requires:	git-core >= 1.8.5
 Requires:	vim-rt >= 4:7.4.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -60,7 +61,7 @@ Documentation for fugitive Vim plugin.
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_vimdatadir}/
-cp -pr autoload doc ftdetect plugin syntax $RPM_BUILD_ROOT%{_vimdatadir}
+cp -pr autoload doc ftdetect ftplugin plugin syntax $RPM_BUILD_ROOT%{_vimdatadir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -75,6 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_vimdatadir}/autoload/fugitive.vim
 %{_vimdatadir}/ftdetect/fugitive.vim
+%{_vimdatadir}/ftplugin/fugitiveblame.vim
 %{_vimdatadir}/plugin/fugitive.vim
 %{_vimdatadir}/syntax/fugitive.vim
 %{_vimdatadir}/syntax/fugitiveblame.vim
